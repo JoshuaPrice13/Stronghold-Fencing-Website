@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "secondary-fixed-dim": "#ffb5a0",
+                "secondary": "#a73918",
+                "inverse-on-surface": "#f0f0f3",
+                "on-tertiary-container": "#80949d",
+                "background": "#f9f9fb",
+                "tertiary-fixed-dim": "#b5cad4",
+                "tertiary-fixed": "#d1e6f0",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "secondary-fixed": "#ffdbd1",
+                "inverse-primary": "#b8c7e5",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f3f3f6",
+                "surface-container": "#edeef0",
+                "on-surface": "#1a1c1e",
+                "inverse-surface": "#2f3133",
+                "on-tertiary-fixed-variant": "#374952",
+                "on-secondary-fixed": "#3b0900",
+                "on-primary-fixed-variant": "#394760",
+                "outline-variant": "#c5c6ce",
+                "surface-variant": "#e2e2e5",
+                "primary-fixed-dim": "#b8c7e5",
+                "on-tertiary": "#ffffff",
+                "surface-container-highest": "#e2e2e5",
+                "tertiary": "#04171f",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed": "#0a1e26",
+                "surface-tint": "#505f79",
+                "on-primary-container": "#8291ad",
+                "surface": "#f9f9fb",
+                "primary-container": "#1b2a41",
+                "outline": "#75777e",
+                "surface-dim": "#d9dadc",
+                "on-secondary": "#ffffff",
+                "on-background": "#1a1c1e",
+                "on-surface-variant": "#44474d",
+                "surface-container-high": "#e8e8ea",
+                "surface-bright": "#f9f9fb",
+                "tertiary-container": "#192c34",
+                "on-primary-fixed": "#0c1c32",
+                "primary": "#05152b",
+                "on-secondary-container": "#6c1900",
+                "on-primary": "#ffffff",
+                "secondary-container": "#fe7952",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#862201",
+                "primary-fixed": "#d5e3ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Space Grotesk"],
+                "body": ["Manrope"],
+                "label": ["Work Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .no-border { border: none !important; }
+        .tonal-shift { background-color: rgba(249, 249, 251, 0.8); }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center px-8 py-4 max-w-full mx-auto no-border tonal-shift">
+<div class="text-xl font-bold tracking-tighter text-primary dark:text-slate-50 font-headline uppercase tracking-tight">
+            FENCE &amp; CO.
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary dark:text-orange-500 font-bold border-b-2 border-secondary pb-1 font-headline uppercase tracking-tight text-sm" href="#">Home</a>
+<a class="text-primary dark:text-slate-300 hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#">Services</a>
+<a class="text-primary dark:text-slate-300 hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#">Gallery</a>
+<a class="text-primary dark:text-slate-300 hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#">Request Quote</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label font-medium hover:bg-primary transition-all duration-300 transform active:scale-95">
+            Get a Consultation
+        </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern architectural fencing" class="w-full h-full object-cover" data-alt="Modern architectural fencing with sleek black horizontal slats and concrete pillars in a contemporary minimalist garden setting at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSCXCZYLvw2XlJxrGssVwiOnUXTZW7mKOmU4xNPgUQx9dPvUnhxw5NqwQrnlIE-JTOkY_dxME6-PUIua9EerVKSY5Ghzp36TRDETMoGNXPYjLkQCOgUqj2LVdjsFVLfCK-0UjqRly5DhvvRQbTsPlox2YFWCGsWlB8lGVIJ0yEMy2KX6n-vDDQsBOcCamzoLYNR5D018oO6634KhWJEJyfUc8i1W04rcGS8WcUXUYm4mIqJEwPDmOA-dYjs_2qAfjbmK42h2s5E7U"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10">
+<div class="max-w-3xl">
+<span class="inline-block px-4 py-1 bg-secondary text-on-secondary text-xs font-bold tracking-[0.2em] uppercase mb-6">Master Craftsmen</span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-white leading-tight tracking-tighter mb-6">
+                    Built to Last.<br/>
+<span class="text-secondary italic">Designed</span> to Impress.
+                </h1>
+<p class="text-xl text-surface/80 max-w-xl mb-10 font-light leading-relaxed">
+                    Premium Fencing and Construction Solutions for Home and Business. We transform boundaries into architectural statements.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300">
+                        Get a Free Estimate
+                    </button>
+<button class="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                        View Portfolio
+                    </button>
+</div>
+</div>
+</div>
+<!-- Asymmetrical Accent -->
+<div class="absolute bottom-0 right-0 hidden lg:block translate-y-1/2 translate-x-1/4">
+<div class="text-[20rem] font-headline font-black text-white/5 select-none leading-none">IRON</div>
+</div>
+</section>
+<!-- Our Services Section -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl font-headline font-bold text-primary mb-4">Precision Engineering</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">From high-security industrial perimeters to elegant residential boundary markers, our services are executed with architectural rigor.</p>
+</div>
+<div class="hidden md:block h-[2px] bg-outline-variant flex-grow mx-12 mb-6"></div>
+<div class="font-headline font-bold text-primary/20 text-6xl">01</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- Service Card 1 -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-primary-container">
+<img alt="Residential Fencing" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of premium cedar horizontal fencing with precise spacing and stainless steel hardware in a manicured residential backyard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSUJGEMx1AJxJbWXQ8Q185C3MDZATd7mtzj0r5cTbzzonuVNYi3SQ0vtg9o2PfmZWNu-Su6nG5ollDhvLMjl9QZpG1jWUhm4p4Dp1k9qL1YvxmN-l0qYk3knE68J2P-rmElrS08hzFWIhk1Dq0Xm9YCyZ80LY2yySWr4VdMwE-fejTmcsT3a18RPB-KoKYISDl5O04VPJp6n5hvj7N16VWpODUYuqrCH397DStrRkrI9vGFu8MB6g0APadLCFveUL18TsoUmKE37I"/>
+<div class="absolute inset-0 p-10 flex flex-col justify-end">
+<span class="text-secondary font-headline font-bold mb-2">01. Residential</span>
+<h3 class="text-3xl font-headline font-bold text-white mb-4">Residential Fencing</h3>
+<p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Bespoke privacy solutions crafted from premium hardwoods and ornamental metals.</p>
+<div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-tertiary">
+<img alt="Commercial Fencing" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Sturdy industrial black chain link fence with high-security features around a modern commercial facility at blue hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4_3IpVjTClpcKt975fFjcEeUcMQ8CO6VGrPDBfzEdYN-yY5A07M9EX8NBkFj7uZcAaxH4FLIphRZQUmQq4R3X0v-YRR2jj9fj2aW2V9d_SGPhBtt5GBuPG9sarnGCFMLwnzlt13LjVcaUEAcKZy6Ow9lyiYoApZyRnou6_2WwI7y8MLEZ8CcGM29_ZZL0rRNu4OOBd1Q5uyHSHXGF-xwxiY44qDSBVqsHBX1UCYILpLosojcPg4ojjaHDAfLArwlVaKPgmNU-amw"/>
+<div class="absolute inset-0 p-10 flex flex-col justify-end">
+<span class="text-secondary font-headline font-bold mb-2">02. Commercial</span>
+<h3 class="text-3xl font-headline font-bold text-white mb-4">Commercial Fencing</h3>
+<p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Structural security and high-durability systems for industry-standard protection.</p>
+<div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-primary">
+<img alt="Custom Gates" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Automated custom wrought iron gate with intricate geometric patterns at the entrance of a luxury estate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWieq2ZmsTxlRaywZmI_piwo8VqfA3kPGva_wj-uqk4EFRMPeRKFVRVSKPu7Q6twPR7B590GexztWTl0JoXcpfYzQbc4KARxG4gYkifu9fHE69r8PHF0vS9bKDpOY_DQnaIIDleCaoQ-kFGzip2spyV_eKN2ssnYWoB3xv7txUdnATpOlyvxqqQXYVcJl6I3uIZp51uogKyg2QfezTh8HxM4Os_B5RekjG60Dd1A3xbunOMeiISdXFAZ3jH7JH0F1MB1m4wlth5gY"/>
+<div class="absolute inset-0 p-10 flex flex-col justify-end">
+<span class="text-secondary font-headline font-bold mb-2">03. Custom</span>
+<h3 class="text-3xl font-headline font-bold text-white mb-4">Custom Gates</h3>
+<p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Automated entry systems and artisanal metalwork designed for lasting impressions.</p>
+<div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Section (Bento Grid) -->
+<section class="py-24 bg-surface-container">
+<div class="container mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Feature 1: Craftsmanship -->
+<div class="md:col-span-8 bg-surface-container-lowest p-12 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" data-icon="construction">construction</span>
+<h3 class="text-4xl font-headline font-bold text-primary mb-4">Unyielding Craftsmanship</h3>
+<p class="text-on-surface-variant text-lg max-w-lg">Every weld, every post, and every joint is inspected for structural integrity. We don't just build fences; we assemble architectural assets designed to outlast the competition.</p>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500">
+<span class="material-symbols-outlined text-[30rem]" data-icon="architecture">architecture</span>
+</div>
+</div>
+<!-- Feature 2: Local Expertise -->
+<div class="md:col-span-4 bg-primary p-12 rounded-xl text-white">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" data-icon="location_on">location_on</span>
+<h3 class="text-3xl font-headline font-bold mb-4">Local Expertise</h3>
+<p class="text-white/70">Understanding the specific soil conditions and climate of our region allows us to select materials that thrive in local environments.</p>
+</div>
+<!-- Feature 3: Durability -->
+<div class="md:col-span-4 bg-surface-container-high p-12 rounded-xl">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" data-icon="verified">verified</span>
+<h3 class="text-3xl font-headline font-bold text-primary mb-4">Maximum Durability</h3>
+<p class="text-on-surface-variant">We utilize advanced corrosion-resistant coatings and premium grade timber to ensure maintenance-free performance for decades.</p>
+</div>
+<!-- Feature 4: Quote CTA -->
+<div class="md:col-span-8 bg-secondary p-12 rounded-xl flex items-center justify-between group cursor-pointer">
+<div>
+<h3 class="text-4xl font-headline font-bold text-on-secondary mb-2">Ready to Start?</h3>
+<p class="text-on-secondary/80">Schedule your site assessment with our senior foreman.</p>
+</div>
+<div class="bg-white/20 p-4 rounded-full group-hover:bg-white/40 transition-all duration-300">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-slate-950 w-full py-12 px-8 font-body text-sm tracking-wide text-surface dark:text-slate-400 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-t border-white/5">
+<div class="space-y-4">
+<div class="text-lg font-black text-white font-headline">FENCE &amp; CO.</div>
+<p class="max-w-xs opacity-60">High-performance fencing and construction solutions for the modern landscape.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-2 justify-center">
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Residential</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Commercial</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="text-right md:text-right text-slate-400">
+            © 2024 Fencing &amp; Construction LLC. Built Once. Built Right.
+        </div>
+</footer>
+<!-- Floating Action Button -->
+<button class="fixed bottom-8 right-8 bg-secondary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="chat">chat</span>
+</button>
+</body></html>

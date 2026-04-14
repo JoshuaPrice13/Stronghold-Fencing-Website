@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Stronghold Fencing and Construction LLC | Muldrow, OK</title>
+  <link rel="icon" type="image/jpeg" href="Logo.jpg"/>
+  <meta name="description" content="Stronghold Fencing and Construction LLC — Premium fence and gate contractor serving Muldrow OK, Fort Smith AR, Russellville AR, Sallisaw OK, and Fayetteville AR."/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@200;300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed-dim": "#ffb5a0",
+            "secondary": "#a73918",
+            "inverse-on-surface": "#f0f0f3",
+            "on-tertiary-container": "#80949d",
+            "background": "#f9f9fb",
+            "tertiary-fixed-dim": "#b5cad4",
+            "tertiary-fixed": "#d1e6f0",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#ffdbd1",
+            "inverse-primary": "#b8c7e5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f3f6",
+            "surface-container": "#edeef0",
+            "on-surface": "#1a1c1e",
+            "inverse-surface": "#2f3133",
+            "on-tertiary-fixed-variant": "#374952",
+            "on-secondary-fixed": "#3b0900",
+            "on-primary-fixed-variant": "#394760",
+            "outline-variant": "#c5c6ce",
+            "surface-variant": "#e2e2e5",
+            "primary-fixed-dim": "#b8c7e5",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2e5",
+            "tertiary": "#04171f",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#0a1e26",
+            "surface-tint": "#505f79",
+            "on-primary-container": "#8291ad",
+            "surface": "#f9f9fb",
+            "primary-container": "#1b2a41",
+            "outline": "#75777e",
+            "surface-dim": "#d9dadc",
+            "on-secondary": "#ffffff",
+            "on-background": "#1a1c1e",
+            "on-surface-variant": "#44474d",
+            "surface-container-high": "#e8e8ea",
+            "surface-bright": "#f9f9fb",
+            "tertiary-container": "#192c34",
+            "on-primary-fixed": "#0c1c32",
+            "primary": "#05152b",
+            "on-secondary-container": "#6c1900",
+            "on-primary": "#ffffff",
+            "secondary-container": "#fe7952",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#862201",
+            "primary-fixed": "#d5e3ff"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Work Sans"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .tonal-shift {
+      background-color: rgba(249, 249, 251, 0.85);
+    }
+    /* Hero Carousel */
+    #hero-carousel {
+      position: relative;
+    }
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    /* Blueprint input style per design system */
+    .blueprint-input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #05152b;
+      border-radius: 0;
+      outline: none;
+      padding: 0.5rem 0;
+      color: #1a1c1e;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .blueprint-input:focus {
+      border-bottom-color: #a73918;
+      box-shadow: none;
+    }
+    .blueprint-input::placeholder {
+      color: #75777e;
+      font-size: 0.875rem;
+    }
+    /* Modal */
+    #contact-modal {
+      display: none;
+    }
+    #contact-modal.active {
+      display: flex;
+    }
+    /* Mobile menu */
+    #mobile-menu {
+      display: none;
+    }
+    #mobile-menu.active {
+      display: flex;
+    }
+    /* Review card */
+    .review-card {
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-2px);
+      background-color: #e2e2e5;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+
+<!-- ============================================================
+     TOP NAV
+============================================================ -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-md flex justify-between items-center px-6 md:px-8 py-4 tonal-shift">
+  <a href="#home">
+    <img src="Logo.jpg" alt="Stronghold Fencing and Construction LLC" class="h-10 w-auto object-contain"/>
+  </a>
+
+  <!-- Desktop links -->
+  <div class="hidden md:flex gap-8 items-center">
+    <a id="nav-home" class="text-secondary font-bold border-b-2 border-secondary pb-1 font-headline uppercase tracking-tight text-sm" href="#home">Home</a>
+    <a id="nav-services" class="text-primary hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#services">Services</a>
+    <a id="nav-reviews" class="text-primary hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#reviews">Reviews</a>
+    <a id="nav-areas" class="text-primary hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm" href="#service-areas">Areas</a>
+  </div>
+
+  <div class="flex items-center gap-3">
+    <button onclick="openModal()" class="bg-secondary text-on-secondary px-5 py-2 rounded-lg font-label font-medium hover:bg-primary transition-all duration-300 active:scale-95 text-sm">
+      Get a Quote
+    </button>
+    <!-- Hamburger -->
+    <button id="menu-btn" onclick="toggleMenu()" class="md:hidden text-primary p-1" aria-label="Open menu">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-[72px] left-0 w-full z-40 bg-surface/95 backdrop-blur-md px-8 py-6 flex-col gap-5 shadow-lg">
+  <a onclick="closeMenu()" class="text-primary font-headline uppercase tracking-tight text-sm font-medium" href="#home">Home</a>
+  <a onclick="closeMenu()" class="text-primary font-headline uppercase tracking-tight text-sm font-medium" href="#services">Services</a>
+  <a onclick="closeMenu()" class="text-primary font-headline uppercase tracking-tight text-sm font-medium" href="#reviews">Reviews</a>
+  <a onclick="closeMenu()" class="text-primary font-headline uppercase tracking-tight text-sm font-medium" href="#service-areas">Service Areas</a>
+  <div class="pt-2 border-t border-outline-variant/30">
+    <a href="tel:+14799975669" class="text-secondary font-headline font-bold text-sm">(479) 997-5669</a>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" class="relative min-h-[75vh] flex items-center pt-20 bg-surface-container-low overflow-hidden">
+  <div class="container mx-auto px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+
+      <!-- Text — Left -->
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1 bg-secondary text-on-secondary text-xs font-bold tracking-[0.2em] uppercase mb-6">
+          Muldrow, OK &amp; Surrounding Areas
+        </span>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-bold text-primary leading-tight tracking-tighter mb-6">
+          Built to Last.<br/>
+          <span class="text-secondary italic">Built Right.</span>
+        </h1>
+        <p class="text-xl text-on-surface-variant max-w-xl mb-10 font-light leading-relaxed">
+          Stronghold Fencing and Construction LLC delivers honest work, fair prices, and top-notch service across Arkansas and Oklahoma.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openModal()" class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-primary transition-all duration-300 shadow-lg shadow-secondary/20">
+            Get an Estimate
+          </button>
+          <a href="#services" class="border-2 border-primary/20 text-primary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300">
+            View Services
+          </a>
+        </div>
+      </div>
+
+      <!-- Image — Right (Carousel) -->
+      <div class="relative hidden lg:block">
+        <div id="hero-carousel" class="w-[340px] h-[340px] mx-auto overflow-hidden rounded-xl shadow-2xl group">
+          <!-- Slides injected by JS -->
+          <!-- Prev arrow -->
+          <button id="carousel-prev" aria-label="Previous" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/55 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="material-symbols-outlined text-base leading-none">chevron_left</span>
+          </button>
+          <!-- Next arrow -->
+          <button id="carousel-next" aria-label="Next" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/30 hover:bg-black/55 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="material-symbols-outlined text-base leading-none">chevron_right</span>
+          </button>
+        </div>
+        <!-- Decorative blur -->
+        <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section id="services" class="py-24 bg-surface">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-2xl">
+        <h2 class="text-5xl font-headline font-bold text-primary mb-4">What We Do</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed">
+          Fencing, decks, and a wide range of handyman services — every job gets the same honest effort and quality finish, no matter the size.
+        </p>
+      </div>
+      <div class="hidden md:block h-[2px] bg-outline-variant flex-grow mx-12 mb-6"></div>
+      <div class="font-headline font-bold text-primary/20 text-6xl select-none">01</div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+      <!-- Fencing -->
+      <div class="group relative aspect-[4/3] overflow-hidden bg-primary-container">
+        <img
+          alt="Fence installation by Stronghold Fencing and Construction"
+          class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+          src="Gallery/Best/Fence/514275633_122237372438064106_4870360620461358976_n.jpg"
+        />
+        <div class="absolute inset-0 p-10 flex flex-col justify-end">
+          <span class="text-secondary font-headline font-bold mb-2 text-sm tracking-widest uppercase">01. Fencing</span>
+          <h3 class="text-3xl font-headline font-bold text-white mb-4">Fencing</h3>
+          <p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+            Post &amp; picket, barbed wire, privacy, chain link, and more — residential or commercial, we do it all.
+          </p>
+          <div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+
+      <!-- Decks -->
+      <div class="group relative aspect-[4/3] overflow-hidden bg-tertiary">
+        <img
+          alt="Wooden deck built by Stronghold Fencing and Construction"
+          class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+          src="Gallery/Best/Deck/610747351_122267885738064106_9165498594157244106_n - Copy.jpg"
+        />
+        <div class="absolute inset-0 p-10 flex flex-col justify-end">
+          <span class="text-secondary font-headline font-bold mb-2 text-sm tracking-widest uppercase">02. Decks</span>
+          <h3 class="text-3xl font-headline font-bold text-white mb-4">Decks</h3>
+          <p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+            Beautiful, solid wooden decks for porches, patios, and outdoor living spaces — built to stand up to the elements.
+          </p>
+          <div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+
+      <!-- Handyman Jobs -->
+      <div class="group relative aspect-[4/3] overflow-hidden bg-primary">
+        <img
+          alt="Stronghold Fencing and Construction — handyman and property services"
+          class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+          src="Gallery/Best/488945225_122223961454064106_197910834062708206_n.jpg"
+        />
+        <div class="absolute inset-0 p-10 flex flex-col justify-end">
+          <span class="text-secondary font-headline font-bold mb-2 text-sm tracking-widest uppercase">03. Handyman</span>
+          <h3 class="text-3xl font-headline font-bold text-white mb-4">Handyman Jobs</h3>
+          <p class="text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+            From pressure washing and junk removal to landscaping, painting, and light construction — one call covers it all.
+          </p>
+          <div class="mt-6 w-12 h-1 bg-secondary group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY CHOOSE US — Bento Grid
+============================================================ -->
+<section class="py-24 bg-surface-container">
+  <div class="container mx-auto px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+      <!-- Honest Work -->
+      <div class="md:col-span-8 bg-surface-container-lowest p-12 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+        <div class="relative z-10">
+          <span class="material-symbols-outlined text-secondary text-5xl mb-6">handshake</span>
+          <h3 class="text-4xl font-headline font-bold text-primary mb-4">Honest Work, Fair Prices</h3>
+          <p class="text-on-surface-variant text-lg max-w-lg leading-relaxed">
+            We're real people doing honest work for real families. When you hire Stronghold, you're trusting us to show up, do the job right, and leave your property better than we found it — and that's a responsibility we take seriously every single time.
+          </p>
+        </div>
+        <div class="absolute -right-20 -bottom-20 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none">
+          <span class="material-symbols-outlined text-[30rem]">architecture</span>
+        </div>
+      </div>
+
+      <!-- Local Expertise -->
+      <div class="md:col-span-4 bg-primary p-12 rounded-xl text-white">
+        <span class="material-symbols-outlined text-secondary text-5xl mb-6">location_on</span>
+        <h3 class="text-3xl font-headline font-bold mb-4">Local to AR &amp; OK</h3>
+        <p class="text-white/70 leading-relaxed">
+          Based in Muldrow, OK — we know the land, the soil, and the conditions across the River Valley and beyond.
+        </p>
+      </div>
+
+      <!-- Quality -->
+      <div class="md:col-span-4 bg-surface-container-high p-12 rounded-xl">
+        <span class="material-symbols-outlined text-primary text-5xl mb-6">verified</span>
+        <h3 class="text-3xl font-headline font-bold text-primary mb-4">Done Right, Done Fast</h3>
+        <p class="text-on-surface-variant leading-relaxed">
+          Every post, board, and gate is checked before we leave. Fast turnaround — without cutting corners.
+        </p>
+      </div>
+
+      <!-- CTA card -->
+      <div onclick="openModal()" class="md:col-span-8 bg-secondary p-12 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-primary transition-colors duration-300">
+        <div>
+          <h3 class="text-4xl font-headline font-bold text-on-secondary mb-2">Ready to Get Started?</h3>
+          <p class="text-on-secondary/80">Send us a message and we'll get back to you with options and pricing.</p>
+        </div>
+        <div class="bg-white/20 p-4 rounded-full group-hover:bg-white/40 transition-all duration-300 shrink-0 ml-8">
+          <span class="material-symbols-outlined text-white text-4xl">arrow_forward</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     REVIEWS
+============================================================ -->
+<section id="reviews" class="py-24 bg-surface">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-2xl">
+        <h2 class="text-5xl font-headline font-bold text-primary mb-4">What Our Customers Say</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed">We let our work — and our people — speak for themselves.</p>
+      </div>
+      <div class="hidden md:block h-[2px] bg-outline-variant flex-grow mx-12 mb-6"></div>
+      <div class="font-headline font-bold text-primary/20 text-6xl select-none">02</div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Review: Synthia -->
+      <div class="review-card bg-surface-container-lowest p-10 rounded-xl flex flex-col gap-6">
+        <div class="text-secondary text-xl tracking-wider">★★★★★</div>
+        <p class="text-on-surface-variant text-base leading-relaxed flex-grow">
+          "She contacted Jason about repairing her fence. She was very happy with the work and price. Jason's customer service was top notch and she highly recommends him."
+        </p>
+        <div class="pt-4 border-t border-outline-variant/20">
+          <p class="font-headline font-bold text-primary text-sm">Synthia McLeroy-Ford</p>
+          <p class="text-on-surface-variant text-xs font-label mt-1 uppercase tracking-wider">Recommends Stronghold Fencing</p>
+        </div>
+      </div>
+
+      <!-- Review: Brandon -->
+      <div class="review-card bg-surface-container-lowest p-10 rounded-xl flex flex-col gap-6">
+        <div class="text-secondary text-xl tracking-wider">★★★★★</div>
+        <p class="text-on-surface-variant text-base leading-relaxed flex-grow">
+          "Honest guys and very reasonable on prices. They gave me several options and listened to what I wanted done. Finished my fence quickly and did a great job with it."
+        </p>
+        <div class="pt-4 border-t border-outline-variant/20">
+          <p class="font-headline font-bold text-primary text-sm">Brandon Inge</p>
+          <p class="text-on-surface-variant text-xs font-label mt-1 uppercase tracking-wider">Recommends Stronghold Fencing</p>
+        </div>
+      </div>
+
+      <!-- Review: Bambi — accent card -->
+      <div class="bg-primary p-10 rounded-xl flex flex-col gap-6">
+        <div class="text-secondary text-xl tracking-wider">★★★★★</div>
+        <p class="text-white/80 text-base leading-relaxed flex-grow">
+          "Philanthropy is a priority for these folks. Thank you for caring for Dexter Dog Rescue!!"
+        </p>
+        <div class="pt-4 border-t border-white/10">
+          <p class="font-headline font-bold text-white text-sm">Bambi Crozier</p>
+          <p class="text-white/50 text-xs font-label mt-1 uppercase tracking-wider">Recommends Stronghold Fencing</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Facebook link -->
+    <div class="mt-12 text-center">
+      <a
+        href="https://www.facebook.com/profile.php?id=61551923206886"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-3 border-2 border-outline-variant text-primary px-8 py-3 rounded-lg font-headline font-bold text-sm hover:border-secondary hover:text-secondary transition-all duration-300"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+        See More Reviews &amp; Photos on Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICE AREAS
+============================================================ -->
+<section id="service-areas" class="py-24 bg-surface-container">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-2xl">
+        <h2 class="text-5xl font-headline font-bold text-primary mb-4">Where We Work</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed">
+          Serving communities across eastern Oklahoma and the Arkansas River Valley. Not sure if we cover your area? Just ask.
+        </p>
+      </div>
+      <div class="hidden md:block h-[2px] bg-outline-variant flex-grow mx-12 mb-6"></div>
+      <div class="font-headline font-bold text-primary/20 text-6xl select-none">03</div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-surface-container-lowest p-8 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl shrink-0">pin_drop</span>
+        <div>
+          <p class="font-headline font-bold text-primary">Muldrow, OK</p>
+          <p class="text-on-surface-variant text-xs font-label uppercase tracking-wider mt-0.5">Home Base</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl shrink-0">pin_drop</span>
+        <div>
+          <p class="font-headline font-bold text-primary">Fort Smith, AR</p>
+          <p class="text-on-surface-variant text-xs font-label uppercase tracking-wider mt-0.5">Service Area</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl shrink-0">pin_drop</span>
+        <div>
+          <p class="font-headline font-bold text-primary">Sallisaw, OK</p>
+          <p class="text-on-surface-variant text-xs font-label uppercase tracking-wider mt-0.5">Service Area</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl shrink-0">pin_drop</span>
+        <div>
+          <p class="font-headline font-bold text-primary">Russellville, AR</p>
+          <p class="text-on-surface-variant text-xs font-label uppercase tracking-wider mt-0.5">Service Area</p>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-xl flex items-center gap-4">
+        <span class="material-symbols-outlined text-secondary text-3xl shrink-0">pin_drop</span>
+        <div>
+          <p class="font-headline font-bold text-primary">Fayetteville, AR</p>
+          <p class="text-on-surface-variant text-xs font-label uppercase tracking-wider mt-0.5">Service Area</p>
+        </div>
+      </div>
+      <!-- Not sure? -->
+      <div onclick="openModal()" class="bg-secondary p-8 rounded-xl flex items-center gap-4 cursor-pointer group hover:bg-primary transition-colors duration-300">
+        <span class="material-symbols-outlined text-white text-3xl shrink-0">help_outline</span>
+        <div>
+          <p class="font-headline font-bold text-white">Not Sure?</p>
+          <p class="text-white/70 text-xs font-label uppercase tracking-wider mt-0.5">Ask us anyway</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-tertiary w-full py-14 px-8 font-body text-sm tracking-wide">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+
+    <!-- Brand -->
+    <div class="space-y-4">
+      <img src="Logo.jpg" alt="Stronghold Fencing and Construction LLC" class="h-12 w-auto object-contain"/>
+      <p class="max-w-xs text-white/50 text-sm leading-relaxed">
+        Fence &amp; Gate Contractor serving Muldrow, OK and surrounding areas in Arkansas and Oklahoma.
+      </p>
+      <a
+        href="https://www.facebook.com/profile.php?id=61551923206886"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors text-sm"
+      >
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.885v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+        Facebook
+      </a>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex flex-col gap-3">
+      <p class="font-headline font-bold text-white text-xs uppercase tracking-widest mb-1">Contact</p>
+      <a href="tel:+14799975669" class="text-white/50 hover:text-white transition-colors flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">phone</span>
+        (479) 997-5669
+      </a>
+      <a href="mailto:coppersprings@yahoo.com" class="text-white/50 hover:text-white transition-colors flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">mail</span>
+        coppersprings@yahoo.com
+      </a>
+      <p class="text-white/50 flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">location_on</span>
+        Muldrow, OK
+      </p>
+    </div>
+
+    <!-- Nav + copyright -->
+    <div class="flex flex-col gap-3 md:items-end">
+      <p class="font-headline font-bold text-white text-xs uppercase tracking-widest mb-1">Navigate</p>
+      <a href="#services" class="text-white/50 hover:text-white transition-colors">Services</a>
+      <a href="#reviews" class="text-white/50 hover:text-white transition-colors">Reviews</a>
+      <a href="#service-areas" class="text-white/50 hover:text-white transition-colors">Service Areas</a>
+      <button onclick="openModal()" class="text-white/50 hover:text-white transition-colors text-left md:text-right">Get a Quote</button>
+      <p class="text-white/25 text-xs pt-6">
+        &copy; 2025 Stronghold Fencing and Construction LLC.<br/>
+        Built Once. Built Right.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     FLOATING ACTION BUTTON — Call
+============================================================ -->
+<a
+  href="tel:+14799975669"
+  class="fixed bottom-8 right-8 bg-secondary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 hover:bg-primary transition-all duration-300 z-50"
+  title="Call Stronghold Fencing"
+  aria-label="Call us"
+>
+  <span class="material-symbols-outlined text-3xl">phone</span>
+</a>
+
+
+<!-- ============================================================
+     CONTACT MODAL
+============================================================ -->
+<div id="contact-modal" class="fixed inset-0 z-[100] items-center justify-center p-4">
+  <!-- Backdrop -->
+  <div onclick="closeModal()" class="absolute inset-0 bg-primary/60 backdrop-blur-sm"></div>
+
+  <!-- Card -->
+  <div class="relative w-full max-w-lg bg-surface-container-lowest rounded-xl shadow-2xl p-10 z-10 max-h-[90vh] overflow-y-auto">
+
+    <!-- Close button -->
+    <button onclick="closeModal()" class="absolute top-5 right-5 text-on-surface-variant hover:text-secondary transition-colors" aria-label="Close">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <span class="inline-block px-3 py-1 bg-secondary text-on-secondary text-xs font-bold tracking-[0.2em] uppercase mb-4">
+        Stronghold Fencing
+      </span>
+      <h2 class="text-3xl font-headline font-bold text-primary">Request an Estimate</h2>
+      <p class="text-on-surface-variant text-sm mt-2 leading-relaxed">
+        Tell us about your project and we'll get back to you with options and pricing.
+      </p>
+    </div>
+
+    <!-- Form — Blueprint style per design system -->
+    <form action="mailto:coppersprings@yahoo.com" method="POST" enctype="text/plain" class="space-y-8">
+
+      <div>
+        <label class="block text-xs font-label font-semibold text-on-surface-variant uppercase tracking-widest mb-2" for="name">
+          Your Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="e.g. John Smith"
+          required
+          class="blueprint-input"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-label font-semibold text-on-surface-variant uppercase tracking-widest mb-2" for="modal-email">
+          Email Address
+        </label>
+        <input
+          id="modal-email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+          class="blueprint-input"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-label font-semibold text-on-surface-variant uppercase tracking-widest mb-2" for="phone">
+          Phone Number
+        </label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="(555) 000-0000"
+          class="blueprint-input"
+        />
+      </div>
+
+      <div>
+        <label class="block text-xs font-label font-semibold text-on-surface-variant uppercase tracking-widest mb-2" for="modal-message">
+          Project Details
+        </label>
+        <textarea
+          id="modal-message"
+          name="message"
+          rows="4"
+          placeholder="Describe your project — fence type, approximate length, location, etc."
+          required
+          class="blueprint-input resize-none"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-secondary text-on-secondary py-4 px-6 rounded-lg font-headline font-bold text-base hover:bg-primary transition-all duration-300 active:scale-95"
+      >
+        Send Message
+      </button>
+    </form>
+
+    <!-- Alternate contact info -->
+    <div class="mt-6 pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row gap-4 text-sm text-on-surface-variant">
+      <a href="tel:+14799975669" class="flex items-center gap-2 hover:text-secondary transition-colors">
+        <span class="material-symbols-outlined text-base">phone</span>
+        (479) 997-5669
+      </a>
+      <a href="mailto:coppersprings@yahoo.com" class="flex items-center gap-2 hover:text-secondary transition-colors">
+        <span class="material-symbols-outlined text-base">mail</span>
+        coppersprings@yahoo.com
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+  // Modal
+  function openModal() {
+    document.getElementById('contact-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('contact-modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('active');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('active');
+  }
+
+  // Hero Carousel
+  (function () {
+    const images = [
+      'Gallery/Best/547414595_122251376852064106_8444825657428070302_n.jpg',
+      'Gallery/Best/547634870_122251376828064106_1720192558493307382_n.jpg',
+      'Gallery/Best/548965678_122251377740064106_7446730001766137999_n.jpg',
+      'Gallery/Best/549523505_122251377956064106_1627691403653328236_n.jpg',
+      'Gallery/Best/609073720_122267885702064106_2693694819405675599_n.jpg',
+      'Gallery/Best/610747351_122267885738064106_9165498594157244106_n.jpg',
+      'Gallery/Best/627978132_122272213868064106_4056391402069997770_n.jpg',
+      'Gallery/Best/628111254_122272213772064106_6741104417275599780_n.jpg',
+      'Gallery/Best/628327753_122272213988064106_2867587638227215775_n.jpg',
+      'Gallery/Best/513686214_122237371754064106_9159431611049311242_n.jpg',
+      'Gallery/Best/511106206_122237371514064106_5804069378119402877_n.jpg',
+      'Gallery/Best/499429951_122231064380064106_3099514819460274899_n.jpg',
+      'Gallery/Best/488777478_122223961742064106_566434889771653362_n.jpg',
+      'Gallery/Best/488723757_122223961754064106_6909142594798753675_n.jpg',
+      'Gallery/Best/489602191_122223961718064106_6241724286165618171_n.jpg',
+      'Gallery/Best/489830530_122223961694064106_5915493479932112200_n.jpg',
+      'Gallery/Best/489328507_122223961532064106_6758099400262026732_n.jpg',
+      'Gallery/Best/488945225_122223961454064106_197910834062708206_n.jpg',
+      'Gallery/Best/488873190_122223961430064106_1834614692285277671_n.jpg',
+      'Gallery/Best/488866594_122223961388064106_6991402090309710314_n.jpg',
+      'Gallery/Best/488684697_122223961346064106_5943027942556058419_n.jpg',
+      'Gallery/Best/488712533_122223961220064106_983638205753161393_n.jpg',
+      'Gallery/Best/488767494_122223961034064106_4209163778572172057_n.jpg',
+      'Gallery/Best/488664128_122223961052064106_5185075860305523697_n.jpg',
+      'Gallery/Best/470586069_122205401942064106_7586749404323931799_n.jpg',
+      'Gallery/Best/470556208_122205402170064106_6985724165232177714_n.jpg',
+      'Gallery/Best/470623906_122205197492064106_5756824845377963646_n.jpg',
+      'Gallery/Best/470242634_122205195878064106_6032744959699977997_n.jpg',
+      'Gallery/Best/Fence/536284450_122247093692064106_7853358434883608669_n.jpg',
+      'Gallery/Best/Fence/537400750_122247093500064106_3793419231170321652_n.jpg',
+      'Gallery/Best/Fence/571041952_122257580048064106_7596079838153758609_n.jpg',
+      'Gallery/Best/Fence/627483636_122272213928064106_152537428669605680_n.jpg',
+      'Gallery/Best/Fence/628078346_122272213856064106_3186510232291684384_n.jpg',
+      'Gallery/Best/Fence/510986731_122237372324064106_815965021660155929_n.jpg',
+      'Gallery/Best/Fence/514103222_122237371760064106_48119008922588145_n.jpg',
+      'Gallery/Best/Fence/511006626_122237371658064106_9112628433710119920_n.jpg',
+    ];
+
+    const carousel = document.getElementById('hero-carousel');
+    if (!carousel) return;
+
+    // Build slide elements before the arrow buttons
+    const prevBtn = document.getElementById('carousel-prev');
+    images.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Stronghold Fencing and Construction — project photo';
+      img.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+      carousel.insertBefore(img, prevBtn);
+    });
+
+    const slides = carousel.querySelectorAll('img.carousel-slide');
+    let current = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    function start() { timer = setInterval(() => goTo(current + 1), 4000); }
+    function stop()  { clearInterval(timer); }
+
+    document.getElementById('carousel-prev').addEventListener('click', () => { stop(); goTo(current - 1); start(); });
+    document.getElementById('carousel-next').addEventListener('click', () => { stop(); goTo(current + 1); start(); });
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+
+    start();
+  })();
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navIds = { home: 'nav-home', services: 'nav-services', reviews: 'nav-reviews', 'service-areas': 'nav-areas' };
+  const baseClasses = 'text-primary hover:text-secondary transition-colors font-headline uppercase tracking-tight text-sm';
+  const activeClasses = 'text-secondary font-bold border-b-2 border-secondary pb-1 font-headline uppercase tracking-tight text-sm';
+
+  window.addEventListener('scroll', () => {
+    let current = 'home';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+    });
+    Object.entries(navIds).forEach(([id, elId]) => {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      el.className = id === current ? activeClasses : baseClasses;
+    });
+  });
+</script>
+
+</body>
+</html>
